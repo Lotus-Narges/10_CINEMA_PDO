@@ -1,0 +1,6 @@
+Definition of design pattern, 
+MVC
+
+PDO -> L'extension PHP Data Objects (PDO) définit une excellente interface pour accéder à une base de données depuis PHP. abstraction that help us to access to data no matter the db that we are using
+
+DAO -> L'extension Data Access Objects (DAO) permet l'accès aux données stockées dans divers SGBD au travers d'une API générique.

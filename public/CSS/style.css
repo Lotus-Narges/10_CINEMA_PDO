@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@300;400;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Cormorant SC', serif;
+}
+
+#mainContainer {
+    background-image: url("public/image/wood1.jpg");
+    background-repeat: repeat;
+    max-height: 1000px;
+    padding: 10px 20px 10px 20px;
+}
+
+.link {
+    color: black;
+    padding-left: 5px;
+    text-decoration: none;
+}
+
+.link:hover {
+    text-shadow: 2px  2px  2px  gray;
+    color: rgb(173, 31, 239);
+}
+
+.home-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-between;
+    width: 100%;
+    height: 200px;
+}
+
+.list {
+    background-color: rgba(185, 230, 191, 0.823);
+    margin: auto;
+    border: 1px solid black;
+    border-radius: 5px;
+    box-shadow: 0px 4px 3px gray;
+    width: 40%;
+    height: 30px;
+    text-align: center;
+}
+
+.select {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-between;
+    width: 100%;
+    height: 200px;
+}
+
+.select-option {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-between;
+    width: 100%;
+    height: 200px;
+}
+
+
+
+
