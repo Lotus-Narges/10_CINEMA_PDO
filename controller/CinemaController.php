@@ -19,7 +19,7 @@ class CinemaController
     }
 
 
-    public function findAllMovies()
+    public function findAllMovies($searchFilm = null)
     {
         //* Search all the movies in DB
         // create new object of DAO class -> access to data in DB
@@ -39,6 +39,8 @@ class CinemaController
         // $films variable is gonna be used in view (fetch() & rowCount() functions -> we apply these functions to this variable)
         // $films -> A variable that holds the execution part & our SQL query
         $films = $dao -> executerRequete($sqlQuery);
+
+        $search = $searchFilm;
 
         // inclut le contenu d'un autre fichier appelé, et provoque une erreur bloquante s'il est indisponible
         require "view/listFilms.php";
@@ -67,26 +69,33 @@ class CinemaController
 
 
 
-    public function findAllActors()
+    public function findAllActors($searchActor = null)
+    // here we set $searchActor argument to be able to make connection between CinemaController & SearchController
+    // we set the $searchActor = null -> in case there's no argument we wont have any arror
     {
         //* Returns all the Actors in DB
 
         $dao = new DAO();
         $sqlQuery = "SELECT id_actor, first_name, last_name, sex, birth_date FROM Actor ORDER BY id_actor ASC; ";
         $actors = $dao -> executerRequete($sqlQuery);
+        
+        // we stock $searchActor argument to the $search variable
+        $search = $searchActor;
 
         require "view/listActors.php";
     }
 
 
 
-    public function findAllDirectors()
+    public function findAllDirectors($searchDirector = null)
     {
         //* Returns all the Directors in DB
 
         $dao = new DAO();
         $sqlQuery = "SELECT id_director, first_name, last_name, birth_date, sex FROM Director ORDER BY id_director ASC; ";
         $directors = $dao -> executerRequete($sqlQuery);
+
+        $search = $searchDirector;
 
         require "view/listDirectors.php";
     }

@@ -23,7 +23,7 @@ spl_autoload_register(function ($_className){
 $ctrlCinema = new CinemaController();
 $ctrlDelete = new DeleteController();
 $ctrlInsert = new InsertController();
-// $ctrlSearch = new SearchController();
+$ctrlSearch = new SearchController();
 // $ctrlUpdate = new UpdateController();
 
 // protection of injections in URL //! fail XSS
@@ -37,6 +37,8 @@ $id3 = filter_input(INPUT_GET, "id3", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 if(isset($_GET['action'])) {
     // Choosing the next step based on each specific action
     switch($_GET["action"]){
+
+        //The different case that we set are the same as the action that we set in form of each case
         case "listFilms" : $ctrlCinema -> findAllMovies(); break;
         case "listActors" : $ctrlCinema -> findAllActors(); break;
         case "listRoles" : $ctrlCinema -> findAllRoles(); break;
@@ -69,6 +71,10 @@ if(isset($_GET['action'])) {
         case "insertCasting" : $ctrlInsert ->insertCasting() ; break;
         case "deleteCastingForm" : $ctrlDelete -> deleteCastingForm(); break;
         case "deleteCasting" : $ctrlDelete -> deleteCasting($id1, $id2, $id3); break;
+
+        case "searchActor" : $ctrlSearch -> searchActor(); break;
+        case "searchDirector" : $ctrlSearch -> searchDirector(); break;
+        case "searchFilm" : $ctrlSearch -> searchFilm(); break;
 
         case "showGenreForm" : $ctrlInsert -> showGenreForm(); break;
 
